@@ -26,12 +26,17 @@ Comment.init(
                 key: 'id'
             }
         },
-        comment_text: {}
-    }
+        comment_text: {
+            type: DataTypes.STRING,
+            allowNull: false
+        }
+    },
     {
-        sequlize,
-        freezeTableNamae: true,
+        sequelize,
+        freezeTableName: true,
         underscored: true,
         modelName: 'comment'
     }
 )
+
+module.exports = Comment
