@@ -12,17 +12,31 @@ body, html {
 
 a {
   text-decoration: none;
-  color: #225ca3;
+  color: #000000;
   font-weight: bold;
   transition: color .1s;
 }
 
+section {
+  background-color: #ffe6e6;
+  padding: 1%;
+  border-radius: 10px;
+}
+
 a:hover {
-  color: #3486eb;
+  color: #1a0000;
+}
+
+a:visited {
+  color: #1a0000;
+}
+
+ul {
+  list-style-type: none;
 }
 
 button {
-  background-color: #225ca3;
+  background-color: #660000;
   border: 0;
   padding: 1%;
   color: white;
@@ -33,7 +47,7 @@ button {
 }
 
 button:hover {
-  background-color: #3486eb;
+  background-color: #b30000;
 }
 
 .post-list {
@@ -49,7 +63,7 @@ textarea, input {
 
 textarea:focus, input:focus {
   outline: none;
-  border: 1px solid #3486eb;
+  border: 1px solid #ff0000;
 }
 
 textarea {
@@ -75,7 +89,7 @@ form label {
 }
 
 header {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #660000;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -83,7 +97,11 @@ header {
 }
 
 header h1 {
-  font-size: 1em;
+  font-size: 2em;
+}
+
+.navheader{
+  background-color: #ffe6e6;
 }
 
 main {
@@ -97,7 +115,7 @@ main {
   padding: 0;
   cursor: pointer;
   text-decoration: none;
-  color: #225ca3;
+  color: #660000;
   font-size: 100%;
   font-weight: bold;
   transition: color .1s;
@@ -118,28 +136,26 @@ main {
 }
 
 .post {
-  margin-bottom: 2%;
   line-height: 150%;
+  background-color: #ff9999;
+  margin-bottom: 2%;
+  padding:  2%;
+  border-radius: 10px;
 }
 
 .post .title span {
   font-style: italic;
   font-size: 90%;
-  color: #7d7d7d;
+  color: #ff9999
+}
+
+.welcome {
+  font-size: 80%;
 }
 
 .edit-link {
   display: block;
   margin: -1.5% 0 2% 0;
-}
-
-.upvote-btn {
-  background-color: #197d0f;
-  transition: background-color .1s;
-}
-
-.upvote-btn:hover {
-  background-color: #1f9c13;
 }
 
 .comment-form {
@@ -152,13 +168,21 @@ main {
 }
 
 .comment:nth-child(odd) {
-  background-color: #fff5eb;
+  background-color: #ffe6e6;
 }
 
 .comment .meta {
   font-size: 90%;
   margin-bottom: .5%;
   opacity: .6;
+}
+
+.blog-contents {
+  font-size: 100%;
+  font-style: italic;
+  font-weight: normal;
+  margin-bottom: .5%;
+  color: #660000;
 }
 
 .new-post-form input {
@@ -175,4 +199,12 @@ footer {
   justify-content: center;
   padding: 1%;
   font-size: 110%;
+}
+
+.navitem { 
+  width: 400px;
+  height: 50px;
+  padding: 10px;
+  margin: 20px;
+  display: inline;
 }

@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<header>
+<header class="navheader">
     <h1>
-        <a href="/">Just A Tech Blog...</a>
+        <a>Just-in A Tech Blog...</a>
     </h1>
     <nav>
-      <a href="/">Home</a>
-      <a href="/dashboard">Dashboard</a>
+      <div class="navitem"><a href="/">Home</a></div>
+      <div class="navitem"><a href="/dashboard">Dashboard</a></div>
       {{#if loggedIn}}
-      <button id="logout" class="btn-no-style">logout</button>
+      <div class="navitem"><button id="logout" class="btn-no-style">logout</button></div>
       {{else}}
-      <a href="/login">login</a>
+      <div class="navitem"><a href="/login">login</a></div>
       {{/if}}
     </nav>
 </header>
@@ -19,7 +19,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Justin...put something clever here</title>
+  <title>Welcome to Justin's tech blog</title>
   <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
@@ -27,14 +27,18 @@
   <div class="wrapper">
     <header>
       <h1>
-        <a href="/">Justin...put something clever here too...</a>
+        {{#if loggedIn}}
+          <a class="welcome">Welcome!</a>
+        {{else}}
+          <a>Please login or join our community by signing up...</a>
+        {{/if}}
       </h1>
     </header>
     <main>
       {{{ body }}}
     </main>
     <footer>
-      ...and here...
+      ...created by Justin Hanson
     </footer>
   </div>
     

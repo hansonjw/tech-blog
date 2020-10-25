@@ -14,6 +14,7 @@
   <a name="Installation:"></a>
   ## Installation:  
   Go to the website and follow the prompts:
+  https://vast-fjord-84705.herokuapp.com/
   
   <a name="How-To:"></a>
   ## How-To:  
