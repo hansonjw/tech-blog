@@ -9,13 +9,18 @@ router.get('/', (req, res) => {
             'id',
             'title',
             'contents',
-            'user_id'
+            'user_id',
+            'createdAt'
         ],
         order: [['created_at', 'DESC']],
         include: [
             {
-                model: User,
-                attributes: ['username']
+              model: User,
+              attributes: ['username']
+            },
+            {
+              model: Comment,
+              attributes: ['post_id', 'comment_text']
             }
         ]
     })

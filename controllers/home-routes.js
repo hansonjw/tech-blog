@@ -9,8 +9,10 @@ router.get('/', (req, res) => {
     Post.findAll({
         attributes: [
             'id',
+            'title',
             'contents',
-            'user_id'
+            'user_id',
+            'createdAt'
         ],
         include: [
             {
@@ -27,12 +29,22 @@ router.get('/', (req, res) => {
         const posts = dbPostData.map(post => post.get({ plain: true}));
         res.render('homepage', {
             posts,
-            // loggedIn: req.session.loggedIn
+            loggedIn: req.session.loggedIn
         });
     }).catch(err => {
         console.log(err);
         res.status(500).json(err);
     });
+});
+
+// route if user isn't logged in
+router.get('/login', (req, res) => {
+    if (req.session.loggedIn) {
+      res.redirect('/');
+      return;
+    }
+  
+    res.render('login');
 });
 
 module.exports = router;

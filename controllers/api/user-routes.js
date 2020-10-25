@@ -5,7 +5,7 @@ const { User, Post, Comment } = require('../../models');
 // GET /api/users
 router.get('/', (req, res) => {
     User.findAll({
-        attributes: { exclude: ['password'] }
+        // attributes: { exclude: ['password'] }
     })
     .then(dbUserData => res.json(dbUserData))
     .catch(err => {
@@ -24,11 +24,10 @@ router.get('/:id', (req, res) => {
                 model: Post,
                 attributes: ['id', 'title', 'contents', 'created_at']
             },
-            //Need to update after crating routes for comments
-            // {
-            //     model: Comment,
-            //     attributes: ['id', '']
-            // }
+            {
+                model: Comment,
+                attributes: ['id', 'post_id', 'comment_text']
+            }
         ],
         where: {
             id: req.params.id
