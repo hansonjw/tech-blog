@@ -4,7 +4,12 @@ const bcrypt = require ('bcrypt');
 
 // create the user model, extends sequlize class 'Model'
 // need to figure out login functionality...later
-class User extends Model {}
+class User extends Model {
+    // set up method to run on instance data (per user) to check password
+    checkPassword(loginPw) {
+    return bcrypt.compareSync(loginPw, this.password);
+  }
+}
 
 // define User columns and data configuration
 
@@ -24,7 +29,7 @@ User.init(
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                len: [6]
+                len: [2]
             }
         }        
     },
